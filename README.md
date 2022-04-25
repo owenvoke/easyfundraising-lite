@@ -10,7 +10,7 @@ A lighter version of the easyfundraising donation reminder
 
 Via Firefox Addons Store
 
-[![Firefox Install](https://img.shields.io/amo/v/easyfundraising-lite?label=install%20in%20Firefox&logo=firefox&style=flat-square)](https://addons.mozilla.org/addon/easyfundraising-lite)
+[![Firefox Install][ico-install-ff]](https://addons.mozilla.org/addon/easyfundraising-lite)
 
 ## Usage
 
@@ -43,13 +43,12 @@ You can buy trees [here][link-treeware-gifting].
 
 Read more about Treeware at [treeware.earth][link-treeware].
 
+[ico-install-ff]: https://img.shields.io/amo/v/easyfundraising-lite?label=install%20in%20Firefox&logo=firefox&style=flat-square
 [ico-version]: https://img.shields.io/amo/v/easyfundraising-lite?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/owenvoke/easyfundraising-lite.svg?style=flat-square
 [ico-treeware-gifting]: https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=flat-square
 
 [link-addons]: https://addons.mozilla.org/addon/easyfundraising-lite
-[link-github-actions]: https://github.com/owenvoke/easyfundraising-lite/actions
 [link-treeware]: https://treeware.earth
 [link-treeware-gifting]: https://ecologi.com/owenvoke?gift-trees
 [link-author]: https://github.com/owenvoke

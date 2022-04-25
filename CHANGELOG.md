@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## v0.1.1 - 2022-04-25
+
+### Added
+- Add `lite` icon for extension ([eb62f23]())
+
+### Changed
+- Update wording for when no donation is found ([d37e2ee]())
+
 ## v0.1.0 - 2022-04-25
 
 ### Added
