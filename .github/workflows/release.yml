@@ -30,7 +30,7 @@ jobs:
       run: web-ext lint --source-dir ./extension
 
     - name: Build extension
-      run: web-ext build --source-dir ./extension
+      run: web-ext build --source-dir ./extension --filename easyfundraising-lite
 
     - name: Publish extension
       run: web-ext sign --api-key "${AMO_JWT_ISSUER}" --api-secret "${AMO_JWT_SECRET}"
@@ -38,21 +38,9 @@ jobs:
         AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
         AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create release
+      uses: ncipollo/release-action@v1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./web-ext-artifacts/easyfundraising-lite.xpi
-        asset_name: easyfundraising-lite.xpi
-        asset_content_type: application/zip
+        artifacts: "web-ext-artifacts/*.xpi"
+        generateReleaseNotes: true
+        artifactContentType: application/zip
