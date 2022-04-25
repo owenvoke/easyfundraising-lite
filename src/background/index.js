@@ -37,7 +37,7 @@ async function update(message) {
 
     browser.browserAction.setTitle({
         tabId: tab.id,
-        title: retailer !== null ? `${retailer.name} - ${retailer.donation_message}` : 'No donation found...',
+        title: retailer !== null ? `${retailer.name} - ${retailer.donation_message}` : 'No donation found.',
     })
 
     browser.browserAction.onClicked.addListener(tab => {
