@@ -6,13 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
-## v0.1.1 - 2022-04-25
+## [v0.1.1 - 2022-04-25](https://github.com/owenvoke/easyfundraising-lite/compare/v0.1.0...v0.1.1)
 
 ### Added
-- Add `lite` icon for extension ([eb62f23]())
+- Add `lite` icon for extension ([eb62f23](https://github.com/owenvoke/easyfundraising-lite/commit/eb62f231f32ba29df480ac83d33d944d2bfaad0f))
 
 ### Changed
-- Update wording for when no donation is found ([d37e2ee]())
+- Update wording for when no donation is found ([d37e2ee](https://github.com/owenvoke/easyfundraising-lite/commit/d37e2eefb38f304691e2cf2eae26cad27e42d23a))
 
 ## v0.1.0 - 2022-04-25
 
