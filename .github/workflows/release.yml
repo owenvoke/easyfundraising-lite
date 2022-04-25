@@ -29,11 +29,8 @@ jobs:
     - name: Lint extension
       run: web-ext lint --source-dir ./extension
 
-    - name: Build extension
-      run: web-ext build --source-dir ./extension --filename easyfundraising-lite
-
     - name: Publish extension
-      run: web-ext sign --api-key "${AMO_JWT_ISSUER}" --api-secret "${AMO_JWT_SECRET}"
+      run: web-ext sign --source-dir ./extension --api-key "${AMO_JWT_ISSUER}" --api-secret "${AMO_JWT_SECRET}"
       env:
         AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
         AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
