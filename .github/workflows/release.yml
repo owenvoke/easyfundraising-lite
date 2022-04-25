@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    name: AMO
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '12'
+
+    - name: Install npm dependencies
+      run: npm ci
+
+    - name: Transpile code
+      run: npm run build
+
+    - name: Lint extension
+      run: web-ext lint --source-dir ./extension
+
+    - name: Build extension
+      run: web-ext build --source-dir ./extension
+
+    - name: Publish extension
+      run: web-ext sign --api-key "${AMO_JWT_ISSUER}" --api-secret "${AMO_JWT_SECRET}"
+      env:
+        AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+        AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./web-ext-artifacts/easyfundraising-lite.xpi
+        asset_name: easyfundraising-lite.xpi
+        asset_content_type: application/zip
