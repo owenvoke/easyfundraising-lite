@@ -5,7 +5,7 @@
     "homepage_url": "https://github.com/owenvoke/easyfundraising-lite",
     "manifest_version": 2,
     "icons": {
-        "128": "./dist/icons/icon-128.png"
+        "128": "./dist/icons/icon.png"
     },
     "browser_action": {
         "default_title": "easyfundraising lite",
