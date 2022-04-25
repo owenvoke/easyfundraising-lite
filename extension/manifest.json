@@ -1,0 +1,47 @@
+{
+    "name": "easyfundraising lite",
+    "version": "0.1.0",
+    "description": "A lighter version of the easyfundraising donation reminder",
+    "homepage_url": "https://github.com/owenvoke/easyfundraising-lite",
+    "manifest_version": 2,
+    "icons": {
+        "128": "./dist/icons/icon-128.png"
+    },
+    "browser_action": {
+        "default_title": "easyfundraising lite",
+        "default_icon": "./dist/icons/icon-128.png"
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "content_scripts": [
+        {
+            "js": [
+                "dist/content.dist.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "dist/background.dist.js"
+        ],
+        "persistent": true
+    },
+    "options_ui": {
+        "page": "dist/options.html",
+        "open_in_tab": false
+    },
+    "permissions": [
+        "activeTab",
+        "notifications",
+        "storage"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{4ba22ee5-3cce-4cce-9a3b-b2c9f8619ce0}",
+            "strict_min_version": "99.0"
+        }
+    }
+}

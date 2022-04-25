@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "watch:tailwind": "cross-env NODE_ENV=development postcss src/tailwind.css -o extension/dist/tailwind.dist.css -w",
+    "dev:tailwind": "cross-env NODE_ENV=development postcss src/tailwind.css -o extension/dist/tailwind.dist.css",
+    "build:tailwind": "cross-env NODE_ENV=production postcss src/tailwind.css -o extension/dist/tailwind.dist.css",
+    "dev": "concurrently \"npm run watch:tailwind\" \"cross-env NODE_ENV=development webpack --config webpack.config.js --mode=development --watch\"",
+    "build": "npm run build:tailwind && webpack --mode production",
+    "run:firefox": "web-ext run --source-dir ./extension"
+  },
+  "devDependencies": {
+    "alpinejs": "^3.10.2",
+    "autoprefixer": "^10.4.5",
+    "concurrently": "^7.1.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "cross-env": "^7.0.3",
+    "postcss-cli": "^9.1.0",
+    "postcss-loader": "^6.2.1",
+    "tailwindcss": "^3.0.24",
+    "web-ext": "^6.8.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
