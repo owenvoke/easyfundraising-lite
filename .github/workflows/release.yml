@@ -43,7 +43,7 @@ jobs:
         strip_v: true
 
     - name: Rename extension for release
-      run: 'mv "./web-ext-artifacts/easyfundraising_lite-${{steps.tag.outputs.tag}}-an+fx.xpi" "./web-ext-artifacts/easyfundraising-lite.xpi"'
+      run: 'mv "./web-ext-artifacts/easyfundraising_lite-${{ steps.tag.outputs.tag }}-an+fx.xpi" "./web-ext-artifacts/easyfundraising-lite.xpi"'
 
     - name: Create release
       uses: ncipollo/release-action@v1
