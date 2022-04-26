@@ -35,13 +35,19 @@ jobs:
       env:
         AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
         AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        
+    - name: Get tag
+      id: tag
+      uses: dawidd6/action-get-tag@v1
+      with:
+        strip_v: true
 
     - name: Rename extension for release
-      run: 'mv "web-ext-artifacts/*.xpi" "web-ext-artifacts/easyfundraising-lite.xpi"'
+      run: 'mv "./web-ext-artifacts/easyfundraising_lite-${{steps.tag.outputs.tag}}-an+fx.xpi" "./web-ext-artifacts/easyfundraising-lite.xpi"'
 
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "web-ext-artifacts/easyfundraising-lite.xpi"
+        artifacts: "./web-ext-artifacts/easyfundraising-lite.xpi"
         generateReleaseNotes: true
         artifactContentType: application/zip
