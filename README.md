@@ -10,7 +10,7 @@ A lighter version of the easyfundraising donation reminder
 
 Via Firefox XPI
 
-[![Firefox Install][ico-install-ff]](https://github.com/owenvoke/easyfundraising-lite/releases/latest)
+[![Firefox Install][ico-install-ff]](https://github.com/owenvoke/easyfundraising-lite/releases/latest/download/easyfundraising-lite.xpi)
 
 ## Usage
 
