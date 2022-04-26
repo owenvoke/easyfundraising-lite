@@ -31,7 +31,7 @@ jobs:
       run: npm run lint:firefox
 
     - name: Publish extension
-      run: npm run publish:firefox
+      run: npm run publish:firefox -- --timeout 300000
       env:
         AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
         AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
