@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v0.1.4 - 2022-04-26](https://github.com/owenvoke/easyfundraising-lite/compare/v0.1.3...v0.1.4)
+
+## Added
+- Nothing, new release id...
+
 ## [v0.1.3 - 2022-04-25](https://github.com/owenvoke/easyfundraising-lite/compare/v0.1.2...v0.1.3)
 
 ### Added
