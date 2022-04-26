@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## Unreleased
 
+## [v0.1.6 - 2022-04-26](https://github.com/owenvoke/easyfundraising-lite/compare/v0.1.5...v0.1.6)
+
+### Changed
+- Update wording on options page ([b8318db](https://github.com/owenvoke/easyfundraising-lite/commit/b8318db4a78c05ad0e6f09f2a2a6073bb2641b5d)
+
 ## [v0.1.5 - 2022-04-26](https://github.com/owenvoke/easyfundraising-lite/compare/v0.1.4...v0.1.5)
 
 ## Added
