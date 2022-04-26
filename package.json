@@ -7,7 +7,8 @@
     "dev": "concurrently \"npm run watch:tailwind\" \"cross-env NODE_ENV=development webpack --config webpack.config.js --mode=development --watch\"",
     "build": "npm run build:tailwind && webpack --mode production",
     "run:firefox": "web-ext run --source-dir ./extension",
-    "publish:firefox": "web-ext sign --api-key \"${MOZILLA_ADDONS_KEY}\" --api-secret \"${MOZILLA_ADDONS_SECRET}\" --source-dir ./extension"
+    "lint:firefox": "web-ext lint --source-dir ./extension",
+    "publish:firefox": "web-ext sign --source-dir ./extension --api-key \"${AMO_JWT_ISSUER}\" --api-secret \"${AMO_JWT_SECRET}\""
   },
   "devDependencies": {
     "alpinejs": "^3.10.2",
